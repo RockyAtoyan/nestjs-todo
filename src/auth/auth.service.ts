@@ -6,6 +6,7 @@ import { LibService } from '../lib/lib.service';
 import { LoginDto } from './dto/login.dto';
 import { Request, Response } from 'express';
 import { v4 as uuid } from 'uuid';
+import * as process from 'process';
 
 @Injectable()
 export class AuthService {
@@ -31,7 +32,7 @@ export class AuthService {
           password,
           image:
             image && image.size
-              ? `http://localhost:3000/users-images/${id + '.' + image.originalname.split('.')[1]}`
+              ? `${process.env.API}/users-images/${id + '.' + image.originalname.split('.')[1]}`
               : null,
         },
       });
