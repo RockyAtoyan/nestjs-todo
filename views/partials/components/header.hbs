@@ -5,7 +5,7 @@
       {{#if user.image}}
         <div class='header_profile'>
           <h3>{{user.name}}</h3>
-          <img src='{{user.image}}' alt='' />
+          <img src='{{user.image}}' onerror="this.src='/user.ong';this.onerror='';" alt='' />
             {{> components/logout-button}}
         </div>
       {{else}}
