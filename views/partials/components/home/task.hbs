@@ -1,0 +1,27 @@
+<div class='task' data-id="{{this.id}}" data-todoId="{{this.todoId}}" data-done="{{this.isDone}}">
+    <div class="task_index">{{inc @index inc=1}}</div>
+    <div class="task_inner">
+        {{#if this.isDone}}
+            <h4 class="done">{{this.text}}</h4>
+        {{else}}
+            <h4>{{this.text}}</h4>
+        {{/if}}
+        <div class='task_actions'>
+            {{#if this.deadline}}
+                <div class="deadline">{{date this.deadline}}</div>
+            {{/if}}
+            {{#if this.isDone}}
+                <button data-taskId='{{this.id}}' class="task_done active">
+                    {{> components/icons/check}}
+                </button>
+            {{else}}
+                <button data-taskId='{{this.id}}' class="task_done">
+                    {{> components/icons/check}}
+                </button>
+            {{/if}}
+            <button data-todoId='{{this.todoId}}' data-taskId='{{this.id}}' class='task_delete'>
+                {{> components/icons/trash }}
+            </button>
+        </div>
+    </div>
+</div>

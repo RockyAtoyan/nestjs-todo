@@ -1,0 +1,14 @@
+<div class='popup todo_popup' data-todoId={{this.id}}>
+  <button class='todo_popup__close'></button>
+  <form action='/todo/{{this.id}}' method='post'>
+    <div>Add task</div>
+    <input type='text' class='input' name='text' placeholder='Task' required />
+    <input
+      type='datetime-local'
+      class='input'
+      name='deadline'
+      placeholder='Task'
+    />
+    <button type='submit' class='btn'>Add</button>
+  </form>
+</div>

@@ -1,0 +1,19 @@
+<main class='main'>
+  <div class='login_inner'>
+    <form action='/auth/login' method='post'>
+        <h1>Sign in your account</h1>
+      <input class="input" name='name' placeholder="Name" />
+      <input class="input" type="password" name='password' placeholder="Password" />
+      <button class="btn" type="submit">Sign in</button>
+      {{#if error}}
+        <div class="error">{{error}}.</div>
+      {{/if}}
+        <p>Don't have account? <a class="link" href="/registration">Sign up</a></p>
+    </form>
+      {{> components/sign/slider}}
+  </div>
+</main>
+<script
+  src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'
+></script>
+<script src='js/sign.js'></script>

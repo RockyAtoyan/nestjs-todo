@@ -1,0 +1,42 @@
+<div
+  class='todo'
+  draggable='true'
+  data-id='{{this.id}}'
+  data-order='{{this.order}}'
+  id="{{id this.id}}"
+>
+    <div class="todo_index">{{inc @index inc=1}}</div>
+    <div class="todo_inner">
+        <div class='todo_header'>
+            <h3>{{this.text}}</h3>
+            <div class='todo_header__action'>
+                {{#if this.tasks}}
+                    <button class='todo_collapse' data-todoId='{{this.id}}'>
+                        {{> components/icons/arrow }}
+                    </button>
+                {{/if}}
+                <button class='todo_popup__btn' data-todoId='{{this.id}}'>
+                    {{> components/icons/add }}
+                </button>
+                <button data-todoId='{{this.id}}' class='todo_delete'>
+                    {{> components/icons/trash }}
+                </button>
+            </div>
+        </div>
+        <div class="todo_tasks active" data-todoId={{this.id}}>
+            <div class="todo_tasks__header">
+                <h3>Tasks</h3>
+                <div class="todo_tasks__filters">
+                    <button class="btn active" data-todoId="{{this.id}}" data-filter="all">All</button>
+                    <button class="btn" data-todoId="{{this.id}}" data-filter="active">Active</button>
+                    <button class="btn" data-todoId="{{this.id}}" data-filter="done">Done</button>
+                </div>
+            </div>
+            {{#each this.tasks}}
+                <div class="null" data-todoId="{{this.todoId}}">No tasks!</div>
+                {{> components/home/task }}
+            {{/each}}
+        </div>
+    </div>
+</div>
+{{> components/home/create-task}}

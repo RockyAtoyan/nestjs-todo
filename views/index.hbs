@@ -1,0 +1,12 @@
+<main class='main'>
+  <div class='home_inner'>
+        {{> components/home/create-todo}}
+            {{#if todos}}
+                {{> components/home/todos}}
+            {{else}}
+                <div class="empty">No plans!</div>
+            {{/if}}
+  </div>
+</main>
+
+<script src="js/todo.js"></script>

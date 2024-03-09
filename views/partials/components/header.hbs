@@ -1,0 +1,22 @@
+<header class='header'>
+  <div class='header_inner'>
+    <a href="/" class='logo'>ArmPlanner</a>
+    {{#if user}}
+      {{#if user.image}}
+        <div class='header_profile'>
+          <h3>{{user.name}}</h3>
+          <img src='{{user.image}}' alt='' />
+            {{> components/logout-button}}
+        </div>
+      {{else}}
+          <div class='header_profile'>
+              <h3>{{user.name}}</h3>
+              <img src='/user.png' alt='' />
+              {{> components/logout-button}}
+          </div>
+      {{/if}}
+    {{else}}
+      <a class="btn" href='/login'>Sign in</a>
+    {{/if}}
+  </div>
+</header>

@@ -1,0 +1,7 @@
+<form class='create_todo__form' action='/todo' method='post'>
+  <input type='text' name='text' class='input' placeholder='Todo' required />
+  <button type='submit' class='btn'>Create</button>
+  {{#if error}}
+    <div class='error'>{{error}}</div>
+  {{/if}}
+</form>

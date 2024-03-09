@@ -1,0 +1,24 @@
+<main class='main'>
+    <div class='login_inner reg_inner'>
+        <form action='/auth/registration' method='post' enctype='multipart/form-data'>
+            <h1>Sign up new account</h1>
+            <input class="input" name='name' placeholder="Name" />
+            <input class="input" name='password' type="password" placeholder="Password" />
+            <label for="sign_file">
+                <span class="btn">Choose image</span>
+                <span id="sign_file__name"></span>
+            </label>
+            <input id="sign_file" hidden type='file' name='image' />
+            <button class="btn" type="submit">Sign up</button>
+            {{#if error}}
+                <div class="error">{{error}}.</div>
+            {{/if}}
+            <p>Have account? <a class="link" href="/login">Sign in</a></p>
+        </form>
+        {{> components/sign/slider}}
+    </div>
+</main>
+<script
+        src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'
+></script>
+<script src='js/sign.js'></script>
